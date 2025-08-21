@@ -1,0 +1,48 @@
+# Python/Backend specific
+# ---------------------------------
+# Virtual Environment
+/venv
+venv/
+.venv/
+
+# Environment variables
+.env
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# ---
+# Node.js/Frontend specific
+# ---------------------------------
+# Dependencies
+/node_modules
+
+# Production build folder
+/build
+
+# Test coverage folder
+/coverage
+
+# Environment variables
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ---
+# General/OS specific
+# ---------------------------------
+# macOS folder settings
+.DS_Store
+
+# IDE/Editor specific
+.vscode/
+.idea/
