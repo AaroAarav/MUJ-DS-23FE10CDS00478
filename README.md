@@ -1,7 +1,10 @@
-# Name: Aarav
-# RollNo: 23FE10CDS00478
-# Section: G
-# Project: PortfolioGen
+**Name**: Aarav
+**Registration Number**: 23FE10CDS00478
+**Branch**: Data Science (DS)
+**Section**: G
+**Project Title**: PortfolioGen
+**GitHub Username**: AaroAarav
+**Training Program**: NLP Project
 
 # PortfolioGen
 
