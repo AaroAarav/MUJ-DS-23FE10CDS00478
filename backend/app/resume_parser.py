@@ -4,10 +4,6 @@ from PIL import Image
 import pytesseract
 import io
 from fastapi import HTTPException
-from transformers import pipeline
-
-# Load a pre-trained NER model from Hugging Face
-ner_pipeline = pipeline("ner", model="dbmdz/bert-large-cased-finetuned-conll03-english", grouped_entities=True)
 
 def extract_text_from_pdf(file_stream: io.BytesIO) -> str:
     """Extracts text from a PDF file stream."""
@@ -56,17 +52,4 @@ def get_text_from_resume(file_stream: io.BytesIO, content_type: str) -> str:
         raise HTTPException(status_code=400, detail="Could not extract text from the file.")
         
     return text
-
-def extract_entities_from_text(text: str) -> dict:
-    """
-    Extracts named entities from text using a pre-trained NER model.
-    """
-    entities = ner_pipeline(text)
-    structured_data = {
-        "persons": [e["word"] for e in entities if e["entity_group"] == "PER"],
-        "organizations": [e["word"] for e in entities if e["entity_group"] == "ORG"],
-        "locations": [e["word"] for e in entities if e["entity_group"] == "LOC"],
-        "misc": [e["word"] for e in entities if e["entity_group"] == "MISC"],
-        "raw_text": text
-    }
-    return structured_data
+
